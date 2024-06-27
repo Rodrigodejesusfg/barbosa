@@ -10,3 +10,4 @@ statsmodels
 xlsxwriter
 reportlab
 protobuf
+openpyxl
