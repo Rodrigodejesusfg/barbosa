@@ -21,7 +21,7 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph
 
 # Configurações do Gemini
-genai.configure(api_key="AIzaSyCtj2xGASpn_FrNYW9D-Nbt_F8-CXpFypQ")  
+genai.configure(api_key="APIKEY")  
 MODELO_NOME = "gemini-1.5-pro"
 model = genai.GenerativeModel(MODELO_NOME)
 
@@ -37,12 +37,12 @@ init_session_state()
 
 @st.cache_data
 def load_data():
-    df_rfi = pd.read_excel(r"C:\Users\070283\OneDrive - Construtora Barbosa Mello SA\python\projeto barbosa ai\DADOS\rfi chatbot.xlsx")
+    df_rfi = pd.read_excel("rfi chatbot.xlsx")
     df_rfi = df_rfi.dropna(subset=['Pergunta'])
     df_rfi['Pergunta'] = df_rfi['Pergunta'].astype(str)
     df_rfi['Resposta'] = df_rfi['Resposta'].fillna("Sem resposta disponível.").astype(str)
 
-    df_sf = pd.read_excel(r"C:\Users\070283\OneDrive - Construtora Barbosa Mello SA\python\projeto barbosa ai\DADOS\SF.xlsx")
+    df_sf = pd.read_excel("SF.xlsx")
     df_sf = df_sf.fillna("Sem informação disponível.")
 
     return df_rfi, df_sf
