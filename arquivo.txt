@@ -1,6 +1,6 @@
 streamlit
 pandas
-google-generativeai
+google-generativeai==0.2.1
 scikit-learn
 numpy
 fuzzywuzzy
@@ -9,3 +9,4 @@ plotly
 statsmodels
 xlsxwriter
 reportlab
+protobuf
