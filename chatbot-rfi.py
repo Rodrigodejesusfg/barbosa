@@ -1,6 +1,14 @@
 import streamlit as st
 import pandas as pd
-from google import generativeai as genai
+import streamlit as st
+import pandas as pd
+try:
+    from google import generativeai as genai
+except ImportError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.5.4"])
+    from google import generativeai as genai
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
@@ -21,7 +29,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import Paragraph
 
 # Configurações do Gemini
-genai.configure(api_key="APIKEY")  
+import os
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  
 MODELO_NOME = "gemini-1.5-pro"
 model = genai.GenerativeModel(MODELO_NOME)
 
