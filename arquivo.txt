@@ -1,0 +1,11 @@
+streamlit
+pandas
+google-generativeai
+scikit-learn
+numpy
+fuzzywuzzy
+Unidecode
+plotly
+statsmodels
+xlsxwriter
+reportlab
