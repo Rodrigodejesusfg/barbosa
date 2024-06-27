@@ -2,13 +2,7 @@ import streamlit as st
 import pandas as pd
 import streamlit as st
 import pandas as pd
-try:
-    from google import generativeai as genai
-except ImportError:
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "google-generativeai==0.5.4"])
-    from google import generativeai as genai
+from google import generativeai as genai
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
