@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
-from google import generativeai as genai
+try:
+    from google import generativeai as genai
+except ImportError:
+    !pip install google-generativeai
+    from google import generativeai as genai
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.decomposition import TruncatedSVD
