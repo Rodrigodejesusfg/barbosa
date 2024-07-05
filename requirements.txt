@@ -11,3 +11,8 @@ xlsxwriter
 reportlab
 protobuf
 openpyxl
+Pillow
+folium
+streamlit-folium
+streamlit-option-menu
+
